@@ -1,2 +1,3 @@
 boot/shutdown,kafka_rest,kafka_rest,kafka_rest
+start/stop,kafka_rest,kafka_rest,kafka_rest_ext_rest
 
