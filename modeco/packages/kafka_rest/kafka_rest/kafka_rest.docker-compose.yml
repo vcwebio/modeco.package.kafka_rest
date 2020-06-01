@@ -12,6 +12,7 @@ services:
     networks: [package_overlay]
     deploy:
       mode: replicated
+      replicas: ${KAFKA_REST_DEPLOY_REPLICAS}
       resources:
         limits:
           cpus: '${KAFKA_REST_DEPLOY_RESOURCES_LIMITS_CPUS}'
@@ -19,7 +20,10 @@ services:
         reservations:
           cpus: '${KAFKA_REST_DEPLOY_RESOURCES_RESERVATIONS_CPUS}'
           memory: '${KAFKA_REST_DEPLOY_RESOURCES_RESERVATIONS_MEMORY}'
-      labels: []
+      placement:
+        constraints: [${KAFKA_REST_DEPLOY_PLACEMENT_CONSTRAINTS}]
+      labels: [${KAFKA_REST_DEPLOY_LABELS}]
+    labels: [${KAFKA_REST_LABELS}]
 # END SERVICE kafka_rest.base
 
 volumes: {}
