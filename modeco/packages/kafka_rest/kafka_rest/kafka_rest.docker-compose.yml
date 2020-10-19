@@ -4,7 +4,7 @@ services:
 
 # START SERVICE kafka_rest.base
   kafka_rest:
-    image: ${CONTECO_REGISTRY}${CONTECO_REALM_RUNTIME}/conteco.kafka_rest.base:5.4.0
+    image: ${CONTECO_REGISTRY}${CONTECO_REALM_RUNTIME}/conteco.kafka_rest.base:6.0.0
     environment: ['KAFKA_REST_HOST_NAME=kafka_rest','KAFKA_REST_BOOTSTRAP_SERVERS=kafka:9092','KAFKA_REST_LISTENERS=http://0.0.0.0:8082','KAFKA_REST_SCHEMA_REGISTRY_URL=http://schema_registry:8081']
     command: []
     volumes: []
